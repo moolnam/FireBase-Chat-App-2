@@ -19,9 +19,9 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="YMq-2P-WoR">
                                 <rect key="frame" x="0.0" y="118" width="414" height="724"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRE BASE CHAT APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lL-3T-vfj">
-                                        <rect key="frame" x="65.5" y="0.0" width="283.5" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FIRE BASE CHAT APP" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lL-3T-vfj" customClass="CLTypingLabel" customModule="CLTypingLabel">
+                                        <rect key="frame" x="65.5" y="0.0" width="283.5" height="50"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -31,7 +31,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVs-Pa-qjq">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
                                                 <connections>
                                                     <segue destination="gBw-w1-o27" kind="show" id="LlT-OT-L0e"/>
                                                 </connections>
@@ -39,7 +39,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-kx-QKb">
                                                 <rect key="frame" x="0.0" y="51" width="374" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                                 <connections>
                                                     <segue destination="021-4h-atu" kind="show" id="d7D-MO-5z3"/>
                                                 </connections>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="79.6875"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Re View Controller-->
         <scene sceneID="G6D-87-ahM">
             <objects>
-                <viewController id="gBw-w1-o27" customClass="LoginViewController" customModule="FireBase_Chat_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gBw-w1-o27" customClass="ReViewController" customModule="FireBase_Chat_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kFn-ah-KkS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -103,7 +103,10 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PTw-Xv-SCu">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                                <connections>
+                                                    <action selector="RegisterPressedButton:" destination="gBw-w1-o27" eventType="touchUpInside" id="5b1-uX-ozh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -125,17 +128,20 @@
                     </view>
                     <navigationItem key="navigationItem" id="TEs-L6-tg4"/>
                     <connections>
-                        <segue destination="hCN-OS-ygh" kind="show" identifier="LoginToChat" id="1Rd-f3-sYq"/>
+                        <outlet property="RegisterPressed" destination="PTw-Xv-SCu" id="kg0-4g-Zvv"/>
+                        <outlet property="emailTextField" destination="MLS-Zs-UMg" id="ayD-H2-Eg6"/>
+                        <outlet property="passwordTextField" destination="4TC-G8-44m" id="Asj-q8-2en"/>
+                        <segue destination="hCN-OS-ygh" kind="show" identifier="RegisterToChat" id="1Rd-f3-sYq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tx8-Zi-Ajo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2105.7971014492755" y="-282.58928571428572"/>
         </scene>
-        <!--Register View Controller-->
+        <!--Lo View Controller-->
         <scene sceneID="NJm-eu-5X5">
             <objects>
-                <viewController id="021-4h-atu" customClass="RegisterViewController" customModule="FireBase_Chat_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="021-4h-atu" customClass="LoViewController" customModule="FireBase_Chat_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ovx-TJ-pFH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,7 +170,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jyx-kw-7iR">
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="filled" title="Register"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -186,7 +192,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="U6H-f1-96U"/>
                     <connections>
-                        <segue destination="hCN-OS-ygh" kind="show" identifier="LoginToRegister" id="oyF-u5-N0X"/>
+                        <segue destination="hCN-OS-ygh" kind="show" identifier="LoginToChat" id="oyF-u5-N0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDF-ka-yT9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -228,8 +234,11 @@
             <point key="canvasLocation" x="131.8840579710145" y="79.6875"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="2lL-3T-vfj"/>
+    </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="oyF-u5-N0X"/>
+        <segue reference="1Rd-f3-sYq"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
