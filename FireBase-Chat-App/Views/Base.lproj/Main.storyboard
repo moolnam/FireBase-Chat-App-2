@@ -171,6 +171,9 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="314" height="31"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
+                                                <connections>
+                                                    <action selector="loginPressedButton:" destination="021-4h-atu" eventType="touchUpInside" id="rxQ-WU-Gxw"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -192,6 +195,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="U6H-f1-96U"/>
                     <connections>
+                        <outlet property="emailTextField" destination="NdY-e9-BIC" id="P0C-RB-f4E"/>
+                        <outlet property="passwordTextField" destination="BFf-Qh-2zm" id="t8a-ib-dnH"/>
+                        <outlet property="pressedButton" destination="jyx-kw-7iR" id="UXu-DC-tOr"/>
                         <segue destination="hCN-OS-ygh" kind="show" identifier="LoginToChat" id="oyF-u5-N0X"/>
                     </connections>
                 </viewController>
@@ -238,7 +244,7 @@
         <designable name="2lL-3T-vfj"/>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="1Rd-f3-sYq"/>
+        <segue reference="oyF-u5-N0X"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

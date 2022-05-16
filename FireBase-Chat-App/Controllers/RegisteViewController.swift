@@ -25,7 +25,7 @@ class ReViewController: UIViewController {
         if let email = emailTextField.text, let password = passwordTextField.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
-                    print("Faild : \(e)")
+                    print("Faild : \(e.localizedDescription)")
                 }
                 else {
                     self.performSegue(withIdentifier: "RegisterToChat", sender: self)
